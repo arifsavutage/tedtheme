@@ -5,13 +5,13 @@ if (is_page() || is_single()) {
     get_header();
 }
 ?>
-<div class="py-4">
+<section style="margin-top: 100px;">
     <div class="container">
         <?php
         if (have_posts()) :
             ?>
         <div class="row">
-            <div class="col-md-12 col-lg-12">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <?php
                     while (have_posts()) :
                         the_post();
@@ -19,12 +19,14 @@ if (is_page() || is_single()) {
                     endwhile;
                     ?>
             </div>
+
+            <?php get_sidebar(); ?>
         </div>
         <?php
         endif;
         ?>
     </div>
-</div>
+</section>
 <?php
 get_footer();
 ?>

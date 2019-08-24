@@ -5,10 +5,10 @@ if (is_page()) {
     get_header();
 }
 ?>
-<div class="py-4" style="margin-top:120px;">
+<div class="py-4" style="margin-top:100px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-xl-12">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <?php
 
                 /* Start the Loop */
@@ -20,6 +20,7 @@ if (is_page()) {
                 endwhile; // End of the loop.
                 ?>
             </div>
+            <?php get_sidebar(); ?>
         </div>
     </div>
 </div>

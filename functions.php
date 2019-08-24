@@ -48,10 +48,10 @@ function tedtheme_widgets_init()
         'name'            => __('Right Sidebar', 'tedtheme'),
         'id'            => 'right-sidebar',
         'description'    => __('Show right sidebar'),
-        'before_widget'    => '<section id="%1$s" class="widget %2$s">',
+        'before_widget'    => '<section id="%1$s" class="widget %2$s unstyle">',
         'after_widget'    => '</section>',
-        'before_title'    => '<h3 style="background-color: #DAB96B;padding: 15px;color: #EBEBEB;margin-bottom: 0px;">',
-        'after_title'    => '</h3>'
+        'before_title'    => '<h4>',
+        'after_title'    => '</h4>'
     ));
 
     register_sidebar(array(

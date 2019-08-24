@@ -1,4 +1,4 @@
-<div class="py-4" id="post-<?php the_ID(); ?>" style="margin-top:120px;">
+<div class="py-4" id="post-<?php the_ID(); ?>">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-xl-12">
