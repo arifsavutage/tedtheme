@@ -16,7 +16,8 @@ Text Domain: tabungemas.com
 body{
     padding-bottom: 0px !important;
 }
-.menu-menu-utama-container{
+
+.container-primary{
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;

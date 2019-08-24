@@ -43,6 +43,7 @@
                 <?php
                 wp_nav_menu(array(
                     'theme_location'  => 'primary',
+                    'container_class' => 'container-primary',
                     'menu_class'      => 'navbar-nav mr-auto mt-2 mt-lg-0',
                     'menu_id'         => 'primary-menu'
                 ));
