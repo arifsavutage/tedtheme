@@ -109,3 +109,16 @@ section.widget ul li{
 #main {
     height: 30vh;
 }
+
+a.more-link {
+    background-color: #eef4f7;
+    color: #37434d;
+    padding : 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+a.more-link:hover{
+    text-decoration: none;
+    background-color: #ddd;
+    color: #333;
+}

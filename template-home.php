@@ -72,9 +72,21 @@ get_header();
         if ($highlight->have_posts()) :
             $highlight->the_post();
             ?>
+
+        <!--
         <div class="intro" data-aos="fade-down" data-aos-duration="1000">
             <h2 class="text-center"><?php the_title(); ?></h2>
             <?php the_content(); ?>
+        </div>
+        -->
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                <h2><?php the_title(); ?></h2>
+                <?php the_content('Selanjutnya'); ?>
+            </div>
+            <div class="col-md-6" data-aos="fade-down" data-aos-duration="1250">
+                <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
+            </div>
         </div>
         <?php endif; ?>
     </div>
@@ -90,13 +102,34 @@ get_header();
         </div>
         <div class="row people">
             <?php
-            $testimoni = new WP_Query(array('pagename' => 'testimonials'));
+            /*$testimoni = new WP_Query(array('pagename' => 'testimonials'));
 
             if ($testimoni->have_posts()) :
                 while ($testimoni->have_posts()) :
                     $testimoni->the_post();
 
                     the_content();
+                endwhile;
+            endif;*/
+            ?>
+            <?php
+            $catfeature = new WP_Query(array('category_name' => 'pilihan'));
+
+            if ($catfeature->have_posts()) :
+
+                $duration = 1000;
+                while ($catfeature->have_posts()) :
+                    $catfeature->the_post();
+                    ?>
+            <div class="col-sm-6 col-md-5 col-lg-4 item" data-aos="flip-left" data-aos-duration="<?= $duration; ?>">
+                <div class="box">
+                    <?php the_post_thumbnail('full', array('class' => 'img-fluid icon')); ?>
+                    <h3 class="name"><?php the_title(); ?></h3>
+                    <?php the_content(); ?>
+                </div>
+            </div>
+            <?php
+                    $duration = $duration + 500;
                 endwhile;
             endif;
             ?>
