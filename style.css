@@ -96,11 +96,21 @@ section.widget h4{
     margin-bottom: 0px;
 }
 
-section.widget ul{
+section.widget{
     margin : 0px 0px 20px 0px;
     padding: 0px;
     border: #21a9af solid 0.1em;
 }
+
+section.widget_search form{
+    margin : 5px;
+}
+
+section.widget ul{
+    margin : 0px 0px 20px 0px;
+    padding: 0px;
+}
+
 section.widget ul li{
     list-style: none;
     margin: 15px;
