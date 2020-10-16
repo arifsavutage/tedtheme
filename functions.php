@@ -80,8 +80,8 @@ function tedtheme_widgets_init()
         'description'    => __('Untuk menampilkan testimoni, install plugin WP Testimonial with rotator widget terlebihdahulu'),
         'before_widget'    => '',
         'after_widget'    => '',
-        'before_title'    => '',
-        'after_title'    => ''
+        'before_title'    => '<h2 class="text-center mb-4 mt-4">',
+        'after_title'    => '</h2>'
     ));
 
     register_sidebar(array(
@@ -135,6 +135,16 @@ function tedtheme_widgets_init()
     ));
 
     register_sidebar(array(
+        'name'            => __('Latihan Widget', 'tedtheme'),
+        'id'            => 'latihan_widget',
+        'description'    => __('Untuk menampilkan widget custom'),
+        'before_widget'    => '',
+        'after_widget'    => '',
+        'before_title'    => '<h2 class="text-center" style="color:#3e4042;">',
+        'after_title'    => '</h2>'
+    ));
+
+    register_sidebar(array(
         'name'            => __('Contact Office', 'tedtheme'),
         'id'            => 'contact-office',
         'description'    => __('Custom html for address, phone, e-mail etc.'),
@@ -163,9 +173,36 @@ function tedtheme_widgets_init()
         'before_title'    => '',
         'after_title'    => ''
     ));
+
+    register_sidebar(
+        array(
+            'name'  => __('Video Header Background', 'tedtheme'),
+            'id'    => 'header_video',
+            'description' => __('For header videos'),
+            'before_widget'    => '',
+            'after_widget'    => '',
+            'before_title'    => '',
+            'after_title'    => ''
+        )
+    );
 }
 add_action('widgets_init', 'tedtheme_widgets_init');
 
+/** activation widget ted*/
+require get_template_directory() . '/classes/class-wp-widget-ted-one.php';
+require get_template_directory() . '/classes/class-wp-widget-video-header.php';
+
+add_action('widgets_init', 'register_wp_widget_ted_one');
+function register_wp_widget_ted_one()
+{
+    register_widget('wp_widget_ted_one');
+}
+
+add_action('widgets_init', 'register_wp_widget_video_header');
+function register_wp_widget_video_header()
+{
+    register_widget('wp_widget_video_header');
+}
 
 /* Membuat ShortCode Accordion */
 function accordions_container($atts, $content = null)
@@ -339,7 +376,7 @@ add_action('wp_enqueue_scripts', 'wptedtheme_style');
 function wptedtheme_scripts()
 {
 
-    wp_enqueue_script('jquerys', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array('jquery'), '3.2.1', true);
+    //wp_enqueue_script('jquerys', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array('jquery'), '3.2.1', true);
     wp_enqueue_script('bootstraps', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js', array(), '4.0.0', true);
     wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js', array(), '3.3.1', true);
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.min.js', array(), '2', true);
